@@ -1,0 +1,16 @@
+'''
+Q:Let's dive into decorators! You are given  mobile numbers. Sort them in ascending order then print them in the standard format shown below:
+
+
++91 xxxxx xxxxx
+
+The given mobile numbers may have ,  or  written before the actual  digit number. Alternatively, there may not be any prefix at all.
+'''
+
+def wrapper(f):
+    def fun(l):
+        formatted_numbers = []
+        for number in l:
+            formatted_numbers.append("+91 " + number[-10:-5]+' '+number[-5:])
+        return f(formatted_numbers)              
+    return fun

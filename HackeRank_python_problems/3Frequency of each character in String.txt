@@ -1,0 +1,13 @@
+'''
+Given a string, the task is to find the frequencies of all the characters in that string and return a dictionary with key as the character and its value as its frequency in the given string.
+
+'''
+input="Hi every one"
+char_freq = {}
+for i in input:
+    if i in char_freq.keys():
+        char_freq[i]+=1
+    else:
+        char_freq[i]=1
+print(char_freq)
+        

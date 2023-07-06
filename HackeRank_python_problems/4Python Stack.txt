@@ -1,0 +1,15 @@
+'''
+A stack is a data structure that stores items in an Last-In/First-Out manner. This is frequently referred to as LIFO. This is in contrast to a queue, which stores items in a First-In/First-Out (FIFO) manner. There are a couple of options when you’re implementing a Python stack.
+
+For example we can use: list or collections.deque
+
+Your are requested to try both of them and submit the collections (2nd) solution
+'''
+
+stack1 = deque()
+stack1.append(10)
+stack1.append(50)
+stack1.pop()
+
+print("Stack has only", stack1[-1])
+        

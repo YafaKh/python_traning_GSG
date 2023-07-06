@@ -1,0 +1,21 @@
+'''
+You are given a list of  lowercase English letters. For a given integer , you can select any  indices (assume -based indexing) with a uniform probability from the list.
+
+Find the probability that at least one of the  indices selected will contain the letter: 
+'''
+from itertools import combinations
+
+# read the input
+n = int(input())
+letters = input().split()
+k = int(input())
+
+combinations_num=0; #the number of all posible combinations
+contains_a=0; #the number of combinations that contain an 'a'
+for indice in combinations(letters, k):
+    combinations_num+=1
+    if 'a' in indice:
+        contains_a+=1
+
+print(contains_a/combinations_num)
+        

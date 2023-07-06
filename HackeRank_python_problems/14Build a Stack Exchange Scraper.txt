@@ -1,0 +1,17 @@
+'''
+Your task will be, to scrape the questions from each library page, in the order in which they are listed. You will be provided with the markup of question listing pages, from which you need to detect:
+(1) Identifier (2) Question text (which is on the Hyperlink to the question) (3) How long ago the question was asked.
+
+The Markup in the Test Cases will be similar to the sample fragment shown below. Please note, that since this markup is real markup from the website, it is likely to contain some stray control and escape characters, unexpected whitespaces and newlines.
+
+'''
+import re, sys
+
+id_regex = re.compile(r"question-summary-(\d+)")
+q_regex = re.compile(r"question-hyperlink\">(.+?)<")
+date_regex = re.compile(r"relativetime\">(.*?)<")
+
+text = sys.stdin.read()
+
+for i in zip(id_regex.findall(text),q_regex.findall(text),date_regex.findall(text)):
+    print(";".join(i))
